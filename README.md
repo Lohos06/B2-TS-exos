@@ -7,3 +7,9 @@ Exos du cours de typescript
 ```bash
 npm install typescript
 ```# B2-TS-exos
+
+##  Installer Typescript
+
+```bash
+npm install -g typescript
+```
