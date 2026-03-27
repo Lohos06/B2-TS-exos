@@ -1,27 +1,27 @@
 //Interfaces
 interface Utilisateur {
-    id: /*type*/;
-    nom: /*type*/;
-    email: /*type*/;
-    estActif: /*type*/;
+    id: number;
+    nom: string;
+    email: string;
+    estActif: boolean;
 }
 
 interface Produit {
-    id: /*type*/;
-    nom: /*type*/;
-    prix: /*type*/;
-    categorie: /*type*/;
-    enStock?: /*type*/; // Propriété optionnelle
+    id: string;
+    nom: string;
+    prix: number;
+    categorie: string;
+    enStock?: boolean; // Propriété optionnelle
 }
 
-const utilisateur1: /*type interface*/ = {
+const utilisateur1: Utilisateur = {
     id: 1,
     nom: "Marie",
     email: "marie@example.com",
     estActif: true
 };
 
-const produit1: /*type interface*/ = {
+const produit1: Produit = {
     id: "P001",
     nom: "Ordinateur portable",
     prix: 999.99,
@@ -30,55 +30,55 @@ const produit1: /*type interface*/ = {
 
 //Extension d'interface
 interface Animal {
-    nom: /*type*/;
-    age: /*type*/;
+    nom: string;
+    age: number;
 }
 
-interface Chien extends /*interface parente*/ {
-    race: /*type*/;
+interface Chien extends Animal {
+    race: string;
 }
 
-interface Chat extends /*interface parente*/ {
-    vies: /*type*/;
+interface Chat extends Animal {
+    vies: number;
 }
 
-const monChien: /*type interface*/ = {
+const monChien: Chien = {
     nom: "Rex",
     age: 3,
     race: "Golden Retriever",
 };
 
-const monChat: /*type interface*/ = {
+const monChat: Chat = {
     nom: "Whiskers",
     age: 2,
     vies: 9,
 };
 
 //Types littéraux
-let direction: /*type littéral avec 4 directions*/ = "nord";
-let taille: /*type littéral avec 3 tailles*/ = "moyen";
-let theme: /*type littéral avec 2 thèmes*/ = "sombre";
-let methodeHttp: /*type littéral avec 4 méthodes HTTP*/ = "GET";
+type direction = "nord" | "est" | "sud" | "ouest";
+type taille = "petit" | "moyen" | "grand";
+type theme = "clair" | "sombre";
+type methodeHttp = "GET" | "POST" | "UPDATE" | "DELETE";
 
 // Types littéraux numériques
-let resultatDe: /*type littéral avec chiffres de 1 à 6*/ = 4;
-let note: /*type littéral avec notes de 1 à 5*/ = 5;
+type resultatDe = 1 | 2 | 3 | 4 | 5 | 6;
+type note = 1 | 2 | 3 | 4 | 5;
 
 //Interfaces avec fonctions
 
 interface Etudiant {
-    nom: /*type*/;
-    age: /*type*/;
-    admis: /*type*/;
+    nom: string;
+    age: number;
+    admis: boolean;
 }
 
-const etudiant1: /*type interface*/ = {
+const etudiant1: Etudiant = {
     nom: "Thomas",
     age: 21,
     admis: true
 };
 
-function inscrireEtudiant(etudiant: /*type interface*/): /*type*/ {
+function inscrireEtudiant(etudiant: Etudiant): string {
     if (etudiant.admis) {
         return `L'étudiant ${etudiant.nom} est inscrit avec succès.`;
     } else {

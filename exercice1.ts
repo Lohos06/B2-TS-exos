@@ -1,54 +1,64 @@
 //Types de base
 
-let prenom: /*type*/ = "Jean";
-let age: /*type*/ = 30;
-let isStudent: /*type*/ = true;
-let city: /*type*/ = "Paris";
-let salary: /*type*/ = 2500.50;
-let country: /*type*/ = "France";
-let hasLicense: /*type*/ = false;
-let email: /*type*/ = "jean@example.com";
-let yearsExperience: /*type*/ = 5;
-let isEmployed: /*type*/ = true;
+let prenom: string = "Jean";
+let age: number = 30;
+let isStudent: boolean = true;
+let city: string = "Paris";
+let salary: number = 2500.50;
+let country: string = "France";
+let hasLicense: boolean = false;
+let email: string = "jean@example.com";
+let yearsExperience: number = 5;
+let isEmployed: boolean = true;
 
 
 //Types unions
-let id: /*type*/ = "12345"; // Peut être une chaîne de caractères ou un nombre
-let score: /*type*/ = 85; // Peut être un nombre ou une chaîne de caractères
-let status: /*type*/ = "active"; // Peut être une chaîne de caractères ou un booléen
-let level: /*type*/ = "beginner"; // Peut être une chaîne de caractères ou un nombre
-let result: /*type*/ = "pass"; // Peut être une chaîne de caractères ou un booléen
+let id: string | number = "12345"; // Peut être une chaîne de caractères ou un nombre
+let score: string | number = 85; // Peut être un nombre ou une chaîne de caractères
+let state: string | boolean = "active"; // Peut être une chaîne de caractères ou un booléen
+let level: string | number = "beginner"; // Peut être une chaîne de caractères ou un nombre
+let result: string | boolean = "pass"; // Peut être une chaîne de caractères ou un booléen
 
 //Types listes
-let fruits: /*type*/ = ["apple", "banana", "orange"];
-let numbers: /*type*/ = [1, 2, 3, 4, 5];
-let namesAndNumber: /*type*/ = ["Alice", 25, "Charlie"];
-let mixedList: /*type*/ = ["text", 42, true, "another text"];
-let emptyList: /*type*/ = [];
+let fruits: string[] = ["apple", "banana", "orange"];
+let numbers: number[] = [1, 2, 3, 4, 5];
+let namesAndNumber: (number | string)[] = ["Alice", 25, "Charlie"];
+let mixedList: (number | string | boolean)[] = ["text", 42, true, "another text"];
+let emptyList: null[] = [];
 
 //Types objets
-let person: /*type*/ = {
+let person: {
+    name: string;
+    age: number;
+    isStudent: boolean;
+} = {
     name: "Alice",
     age: 28,
     isStudent: false
 };
 
-let car: /*type avec nombre de porte optionnel*/ = {
+let car: {
+    make: string;
+    model: string;
+    year: number;
+    doors?: number; 
+} = {
     make: "Toyota",
     model: "Corolla",
-    year: 2020
+    year: 2020,
+    doors: 4 
 };
 
 //Types fonctions
-function greet(name: /*type*/): /*type*/ {
+function greet(name: string): string {
     return `Hello, ${name}!`;
 }
 
-function add(a: /*type*/, b: /*type*/): /*type*/ {
+function add(a: number, b: number): number {
     return a + b;
 }
 
-function isEven(num: /*type*/): /*type*/ {
+function isEven(num: number): boolean {
     return num % 2 === 0;
 }
 
